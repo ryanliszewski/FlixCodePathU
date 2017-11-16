@@ -7,9 +7,24 @@
 //
 
 import Foundation
-
-class C {
-  struct movieDatabaseAPI {
-    let key = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
+struct C {
+  struct movieDatabase {
+    struct API {
+      static let key = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
+    }
+    struct keys {
+      static let title = "title"
+      static let overview = "overview"
+      static let imageURL = "poster_path"
+    }
+    struct endpoint {
+      static let nowPlaying = "now_playing"
+    }
+  }
+  
+  struct idenifier {
+    struct cell {
+      static let movie = "MovieCell"
+    }
   }
 }
