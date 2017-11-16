@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.5.1)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - PKHUD (5.0.0)
+
+DEPENDENCIES:
+  - AlamofireImage (~> 3.3)
+  - PKHUD (~> 5.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+
+PODFILE CHECKSUM: 61908de83a518dabe2ab7fde0f4d8a87baebea51
+
+COCOAPODS: 1.2.0
