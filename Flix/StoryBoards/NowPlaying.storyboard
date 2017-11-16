@@ -39,25 +39,25 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JpI-dy-0tX">
                                                     <rect key="frame" x="15" y="37" width="75" height="75"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="75" id="A9M-vk-F3R"/>
-                                                        <constraint firstAttribute="width" constant="75" id="EDa-6W-77I"/>
+                                                        <constraint firstAttribute="width" constant="75" id="Dcg-mI-zFO"/>
+                                                        <constraint firstAttribute="height" constant="75" id="dYF-Ee-hn7"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Scc-OI-tRI">
                                                     <rect key="frame" x="95" y="1" width="275" height="147"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nm1-iE-Aue">
-                                                            <rect key="frame" x="0.0" y="0.0" width="275" height="55.5"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="55" id="itj-R6-qYF"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="0.0" y="0.0" width="275" height="54"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytl-KJ-xqc">
-                                                            <rect key="frame" x="0.0" y="55.5" width="275" height="91.5"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytl-KJ-xqc">
+                                                            <rect key="frame" x="0.0" y="54" width="275" height="93"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="93" id="cMC-ge-uTG"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -68,12 +68,14 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Scc-OI-tRI" firstAttribute="leading" secondItem="JpI-dy-0tX" secondAttribute="trailing" constant="5" id="1A3-RG-8C5"/>
+                                                <constraint firstItem="JpI-dy-0tX" firstAttribute="centerY" secondItem="6ua-79-gfZ" secondAttribute="centerY" id="0eG-oI-W4d"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JpI-dy-0tX" secondAttribute="bottom" constant="27" id="1an-9I-Bx5"/>
                                                 <constraint firstItem="Scc-OI-tRI" firstAttribute="top" secondItem="6ua-79-gfZ" secondAttribute="top" constant="1" id="7SC-ca-DNo"/>
                                                 <constraint firstAttribute="trailing" secondItem="Scc-OI-tRI" secondAttribute="trailing" constant="5" id="LZD-EG-8Up"/>
-                                                <constraint firstItem="JpI-dy-0tX" firstAttribute="leading" secondItem="6ua-79-gfZ" secondAttribute="leadingMargin" id="SD5-Zl-WtO"/>
+                                                <constraint firstItem="JpI-dy-0tX" firstAttribute="leading" secondItem="6ua-79-gfZ" secondAttribute="leadingMargin" id="e1U-EY-awh"/>
                                                 <constraint firstAttribute="bottom" secondItem="Scc-OI-tRI" secondAttribute="bottom" constant="1" id="jdu-xS-56Z"/>
-                                                <constraint firstItem="JpI-dy-0tX" firstAttribute="centerY" secondItem="6ua-79-gfZ" secondAttribute="centerY" id="oe9-OG-jI2"/>
+                                                <constraint firstItem="Scc-OI-tRI" firstAttribute="leading" secondItem="JpI-dy-0tX" secondAttribute="trailing" constant="5" id="oQw-3b-dPn"/>
+                                                <constraint firstItem="JpI-dy-0tX" firstAttribute="top" secondItem="6ua-79-gfZ" secondAttribute="topMargin" constant="26" id="rbb-gM-xJg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -95,7 +97,7 @@
                         <viewLayoutGuide key="safeArea" id="6tL-cn-NiY"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="BBr-Df-HBi" id="7Wh-hN-Azc"/>
+                        <outlet property="tableView" destination="BBr-Df-HBi" id="nC5-bp-mLX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDE-QL-FBw" userLabel="First Responder" sceneMemberID="firstResponder"/>

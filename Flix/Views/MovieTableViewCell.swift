@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MovieTableViewCell: UITableViewCell {
 
@@ -22,11 +23,14 @@ class MovieTableViewCell: UITableViewCell {
 
   override func setSelected(_ selected: Bool, animated: Bool) {
       super.setSelected(selected, animated: animated)
-      // Configure the view for the selected state
   }
 
   func bindData(movie: Movie) {
+    titleLabel.text = movie.title
+    overviewLabel.text = movie.overview
     
-    
+    if let imageURL = movie.imageURL {
+      posterImageView.af_setImage(withURL: imageURL)
+    }
   }
 }

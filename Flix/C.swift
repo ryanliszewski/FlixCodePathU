@@ -11,6 +11,7 @@ struct C {
   struct movieDatabase {
     struct API {
       static let key = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
+      static let imageURL = "https://image.tmdb.org/t/p/w500"
     }
     struct keys {
       static let title = "title"
