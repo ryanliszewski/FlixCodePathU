@@ -7,20 +7,41 @@
 //
 
 import UIKit
+import PKHUD
 
 class NowPlayingViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
   
+  let refreshControl = UIRefreshControl()
+  
+  lazy var alertController: UIAlertController = {
+    print("test2")
+    let alertController = UIAlertController(title: "Cannot Get Movies", message: "Your internet connection seems to be offline", preferredStyle: .alert)
+    let tryAgainAction = UIAlertAction(title: "Try Again", style: .default, handler: { (action) in
+      HUD.show(.progress, onView: self.view)
+      self.getNowPlayingMovies()
+    })
+    alertController.addAction(tryAgainAction)
+    return alertController
+  }()
+  
   fileprivate var movies: [Movie] = [] {
     didSet {
-      tableView.reloadData()
+      DispatchQueue.main.async {
+        self.tableView.reloadData()
+        HUD.flash(.success, delay: 0.5)
+      }
     }
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.dataSource = self
+    print("test1")
+    HUD.show(.progress, onView: self.view)
+    initializeTableView()
+    getNowPlayingMovies()
+    initializeRefreshControl()
   }
 }
 
@@ -30,8 +51,24 @@ extension NowPlayingViewController {
     MoviedatabaseClient.APICall(endpoint: C.movieDatabase.endpoint.nowPlaying, success: { (movies) in
       self.movies = movies
     }) { (error) in
-      print(error.localizedDescription)
+      self.present(self.alertController, animated: true)
     }
+  }
+  
+  private func initializeTableView(){
+    tableView.dataSource = self
+    tableView.rowHeight = 150.0
+    tableView.insertSubview(refreshControl, at: 0)
+  }
+  
+  private func initializeRefreshControl(){
+    refreshControl.addTarget(self, action: #selector(refreshControlAction(refreshControl:)), for: UIControlEvents.valueChanged)
+  }
+  
+  @objc private func refreshControlAction(refreshControl: UIRefreshControl){
+    refreshControl.beginRefreshing()
+    getNowPlayingMovies()
+    refreshControl.endRefreshing()
   }
 }
 
@@ -47,3 +84,4 @@ extension NowPlayingViewController: UITableViewDataSource {
     return cell
   }
 }
+

@@ -19,7 +19,7 @@ class Movie: NSObject {
     overview = movie[C.movieDatabase.keys.overview] as? String
     
     if let imageURLString = movie[C.movieDatabase.keys.imageURL] as? String {
-      imageURL = URL(string: imageURLString)
+      imageURL = URL(string: C.movieDatabase.API.imageURL + imageURLString)
     }
   }
 
