@@ -3,11 +3,12 @@
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 
-Home.Storyboard
-Search.storyboard
-HomeViewController.swift
-MovieSectionTableViewCell.swift
-MovieCollectionViewCell.swift
+Flix/StoryBoards/Home.storyboard
+Flix/StoryBoards/Search.storyboard
+Flix/View Controllers/HomeViewController.swift
+Flix/Views/MovieCollectionViewCell.swift
+Flix/Views/MovieSectionTableViewCell.swift
+
 
 ## Build generated
 build/
