@@ -58,11 +58,12 @@ extension HomeViewController {
     
     MoviedatabaseClient.movieAPICall(endpoint: C.movieDatabase.endpoint.popular, success: { (popularMovies) in
       self.popularMovies = popularMovies
+      print(self.popularMovies)
     }) { (error) in
       
     }
     
-    MoviedatabaseClient.movieAPICall(endpoint: C.movieDatabase.endpoint.upcoming, success: { (upcomingMovies) in
+    MoviedatabaseClient.movieAPICall(endpoint: "top_rated" , success: { (upcomingMovies) in
       self.upcomingMovies = upcomingMovies
     }) { (error) in
     }
@@ -129,10 +130,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: C.idenifier.cell.movieCollectionView, for: indexPath) as! MovieCollectionViewCell
     
-    if indexPath.section == 0 && !nowPlayingMovies.isEmpty{
+    if collectionView.tag == 0 && !nowPlayingMovies.isEmpty{
       let movie = nowPlayingMovies[indexPath.row]
       cell.bindData(movie: movie)
-    } else if indexPath.section == 1 && !popularMovies.isEmpty{
+    } else if collectionView.tag == 1 && !popularMovies.isEmpty{
       let movie = popularMovies[indexPath.row]
       cell.bindData(movie: movie)
     } else if !upcomingMovies.isEmpty {

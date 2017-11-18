@@ -1,34 +1,33 @@
-# Project 2 - *Name of App Here*
+# Project 1 - *Flix*
 
-**Name of your app** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+**Flix** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: **10** hours spent in total
 
 ## User Stories
 
-The following **required** functionality is complete:
+The following **required** user stories are complete:
 
-- [ ] User can view a list of movies currently playing in theaters from The Movie Database.
-- [ ] Poster images are loaded using the UIImageView category in the AFNetworking library.
-- [ ] User sees a loading state while waiting for the movies API.
-- [ ] User can pull to refresh the movie list.
+- [x ] User sees app icon in home screen and styled launch screen (+1pt)
+- [x] User can scroll through a list of movies currently playing in theaters from The Movie DB API (+5pt)
+- [x ] User can "Pull to refresh" the movie list (+2pt)
+- [x ] User sees a loading state while waiting for the movies to load (+2pt)
 
-The following **optional** features are implemented:
+The following **optional** user stories are implemented:
 
-- [ ] User sees an error message when there's a networking error.
-- [ ] Movies are displayed using a CollectionView instead of a TableView.
-- [ ] User can search for a movie.
-- [ ] All images fade in as they are loading.
-- [ ] User can view the large movie poster by tapping on a cell.
-- [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
-- [ ] Customize the selection effect of the cell.
-- [ ] Customize the navigation bar.
-- [ ] Customize the UI.
+- [x ] User sees an alert when there's a networking error (+1pt)
+- [ ] User can search for a movie (+3pt)
+- [x ] While poster is being fetched, user see's a placeholder image (+1pt)
+- x[ ] User sees image transition for images coming from network, not when it is loaded from cache (+1pt)
+- [ ] Customize the selection effect of the cell (+1pt)
+- [x ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete (+2pt)
 
-The following **additional** features are implemented:
+The following **additional** user stories are implemented:
+- [x] Implmented a model class for a movie and made a API client for the TMDB
+- [x] Autolayout 
 
-- [ ] List anything else that you can get done to improve the app functionality!
-
+- [ ] List anything else that you can get done to improve the app functionality! (+1-3pts)
+- [ ] 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
 1.
@@ -38,7 +37,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/my8j86Z' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -46,15 +45,9 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
-## Credits
-
-List an 3rd party libraries, icons, graphics, or other assets you used in your app.
-
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
-
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2017] [Ryan Liszewski]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
