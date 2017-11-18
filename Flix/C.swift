@@ -21,12 +21,18 @@ struct C {
     }
     struct endpoint {
       static let nowPlaying = "now_playing"
+      static let upcoming = "upcoming"
+      static let popular = "popular"
+      static let latest = "latest"
     }
   }
   
   struct idenifier {
     struct cell {
       static let movie = "MovieCell"
+      static let movieCollectionView = "MovieCollectionViewCell"
+      static let movieSectionTableView = "MovieSectionTableViewCell"
+
     }
   }
 }

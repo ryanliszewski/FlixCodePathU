@@ -30,7 +30,6 @@ class Movie: NSObject {
     var results = [[String: Any]]()
     var movies = [Movie]()
     
-    
     do {
       moviesDataDictionary = try (JSONSerialization.jsonObject(with: moviesJSONData, options: []) as? [String: Any])!
       results = (moviesDataDictionary["results"] as? [[String:Any]])!

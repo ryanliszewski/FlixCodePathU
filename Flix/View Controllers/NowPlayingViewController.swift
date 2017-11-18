@@ -46,7 +46,7 @@ class NowPlayingViewController: UIViewController {
 //MARK: - Helper Functions
 extension NowPlayingViewController {
   private func getNowPlayingMovies(){
-    MoviedatabaseClient.APICall(endpoint: C.movieDatabase.endpoint.nowPlaying, success: { (movies) in
+    MoviedatabaseClient.movieAPICall(endpoint: C.movieDatabase.endpoint.nowPlaying, success: { (movies) in
       self.movies = movies
     }) { (error) in
       self.present(self.alertController, animated: true)
