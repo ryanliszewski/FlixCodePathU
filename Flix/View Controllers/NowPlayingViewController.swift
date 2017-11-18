@@ -16,7 +16,6 @@ class NowPlayingViewController: UIViewController {
   let refreshControl = UIRefreshControl()
   
   lazy var alertController: UIAlertController = {
-    print("test2")
     let alertController = UIAlertController(title: "Cannot Get Movies", message: "Your internet connection seems to be offline", preferredStyle: .alert)
     let tryAgainAction = UIAlertAction(title: "Try Again", style: .default, handler: { (action) in
       HUD.show(.progress, onView: self.view)
@@ -37,7 +36,6 @@ class NowPlayingViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    print("test1")
     HUD.show(.progress, onView: self.view)
     initializeTableView()
     getNowPlayingMovies()
@@ -48,7 +46,7 @@ class NowPlayingViewController: UIViewController {
 //MARK: - Helper Functions
 extension NowPlayingViewController {
   private func getNowPlayingMovies(){
-    MoviedatabaseClient.APICall(endpoint: C.movieDatabase.endpoint.nowPlaying, success: { (movies) in
+    MoviedatabaseClient.movieAPICall(endpoint: C.movieDatabase.endpoint.nowPlaying, success: { (movies) in
       self.movies = movies
     }) { (error) in
       self.present(self.alertController, animated: true)
@@ -81,7 +79,7 @@ extension NowPlayingViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: C.idenifier.cell.movie, for: indexPath) as! MovieTableViewCell
     cell.bindData(movie: movies[indexPath.row])
-    return cell
+    return cell 
   }
 }
 

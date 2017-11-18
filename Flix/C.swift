@@ -11,7 +11,8 @@ struct C {
   struct movieDatabase {
     struct API {
       static let key = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-      static let imageURL = "https://image.tmdb.org/t/p/w500"
+      static let smallImageURL = "https://image.tmdb.org/t/p/w45"
+      static let largeImageURL = "https://image.tmdb.org/t/p/original"
     }
     struct keys {
       static let title = "title"
@@ -20,12 +21,18 @@ struct C {
     }
     struct endpoint {
       static let nowPlaying = "now_playing"
+      static let upcoming = "upcoming"
+      static let popular = "popular"
+      static let latest = "latest"
     }
   }
   
   struct idenifier {
     struct cell {
       static let movie = "MovieCell"
+      static let movieCollectionView = "MovieCollectionViewCell"
+      static let movieSectionTableView = "MovieSectionTableViewCell"
+
     }
   }
 }

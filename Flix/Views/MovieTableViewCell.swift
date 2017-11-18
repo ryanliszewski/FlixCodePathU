@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AlamofireImage
+import AFNetworking
 
 class MovieTableViewCell: UITableViewCell {
 
@@ -28,9 +28,41 @@ class MovieTableViewCell: UITableViewCell {
   func bindData(movie: Movie) {
     titleLabel.text = movie.title
     overviewLabel.text = movie.overview
-    
-    if let imageURL = movie.imageURL {
-      posterImageView.af_setImage(withURL: imageURL)
+    loadPosterImageView(movie)
+  }
+  
+  private func loadPosterImageView(_ movie: Movie){
+    if let smallImageUrl = movie.smallImageURL {
+      let smallImageRequest = URLRequest(url: smallImageUrl)
+      let largeImageRequest = URLRequest(url: movie.largeImageURL!)
+      
+      posterImageView.setImageWith(smallImageRequest, placeholderImage: #imageLiteral(resourceName: "launch_image"), success: { (request, response, image) in
+        if response != nil {
+          self.posterImageView.alpha = 0.0
+          self.posterImageView.image = image
+          UIView.animate(withDuration: 0.3, animations: {
+            self.posterImageView.alpha = 1.0
+          }, completion: { (success) in
+            self.posterImageView.setImageWith(largeImageRequest, placeholderImage: nil, success: { (request, response, image) in
+              if response != nil {
+                self.posterImageView.image = image
+              }
+            }, failure: { (request, response, error) in
+              self.setPlaceHolderImage()
+            })
+          })
+        } else {
+          self.posterImageView.image = image
+        }
+      }, failure: { (request, response, error) in
+        self.setPlaceHolderImage()
+      })
+    } else {
+      setPlaceHolderImage()
     }
+  }
+  
+  private func setPlaceHolderImage(){
+    posterImageView.image = #imageLiteral(resourceName: "launch_image")
   }
 }

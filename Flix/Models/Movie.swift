@@ -10,7 +10,8 @@ import Foundation
 
 class Movie: NSObject {
   
-  var imageURL: URL?
+  var smallImageURL: URL?
+  var largeImageURL: URL?
   var title: String?
   var overview: String?
   
@@ -19,7 +20,8 @@ class Movie: NSObject {
     overview = movie[C.movieDatabase.keys.overview] as? String
     
     if let imageURLString = movie[C.movieDatabase.keys.imageURL] as? String {
-      imageURL = URL(string: C.movieDatabase.API.imageURL + imageURLString)
+      smallImageURL = URL(string: C.movieDatabase.API.smallImageURL + imageURLString)
+      largeImageURL = URL(string: C.movieDatabase.API.largeImageURL + imageURLString)
     }
   }
 
@@ -27,7 +29,6 @@ class Movie: NSObject {
     var moviesDataDictionary = [String: Any]()
     var results = [[String: Any]]()
     var movies = [Movie]()
-    
     
     do {
       moviesDataDictionary = try (JSONSerialization.jsonObject(with: moviesJSONData, options: []) as? [String: Any])!

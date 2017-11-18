@@ -10,7 +10,7 @@ import Foundation
 
 class MoviedatabaseClient {
   
-  class func APICall(endpoint: String?, success: @escaping ([Movie]) -> (), failure: @escaping (Error) -> ()){
+  class func movieAPICall(endpoint: String?, success: @escaping ([Movie]) -> (), failure: @escaping (Error) -> ()){
     if let endpoint = endpoint {
       let url = URL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(C.movieDatabase.API.key)")!
       let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
